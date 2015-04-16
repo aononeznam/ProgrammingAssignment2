@@ -4,7 +4,13 @@
 ## Write a short comment describing this function
 
 makeCacheMatrix <- function(x = matrix()) {
-
+	# I define x$set(y) and x$get() here so they can be called 
+	# like this from the outside envirovment	
+	set <- function(y) {
+        	x <<- y
+    		}
+    	get <- function() x
+    	list(set = set, get = get)
 }
 
 
@@ -15,5 +21,3 @@ cacheSolve <- function(x, ...) {
 }
 
 
-
-blablabla
