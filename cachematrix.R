@@ -5,11 +5,19 @@
 
 makeCacheMatrix <- function(x = matrix()) {
 	# I define x$set(y) and x$get() here so they can be called 
-	# like this from the outside envirovment	
+	# like this from the outside envirovment
+	
+	# set takes one argument and stores it globaly as our variable, 
+	# that is - x$set(newx) will set x to newx 	
 	set <- function(y) {
         	x <<- y
     		}
+	# get simply prints content of our variable (matrix)
+	# it takes no arguments because x is already defined in this envirovment 
+	# and is simply printed (returned) when called with x$get()
     	get <- function() x
+	
+	# I make those objects accessible by making them into a list
     	list(set = set, get = get)
 }
 
